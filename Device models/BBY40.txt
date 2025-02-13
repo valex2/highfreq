@@ -1,0 +1,29 @@
+* EE 251 BBY40 Varactor (Variable Capacitor)
+* Added package inductance of 2.5 nH according to github documentations
+
+*  NOTES: FOR RF OPERATION ADD PACKAGE INDUCTANCE OF 2.5E-9H (added)
+*  AND SET RS=0.47 FOR 2V, 0.39 FOR 5V, 0.32 FOR 10V OR 0.28 FOR 20V BIAS.
+
+.subckt XBBY40 a1 c1
+
+Lpkg a  c1 2.5n
+D    a1 a  BBY40
+
+.MODEL BBY40 D (
++IS=7.417E-15
++N=1.058
++RS=.39
++XTI=3
++EG=1.11
++CJO=64.39E-12
++M=1.013
++VJ=2.566
++FC=.5
++BV=45.12
++IBV=.1232
++TT=215E-9
++ISR=1.731E-12
++NR=2.27
++IKF 9.882)
+
+.ends
